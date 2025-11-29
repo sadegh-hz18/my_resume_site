@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Portfolio of Sadegh Hajizadeh, a Software Developer based in Iran specialized in Python, Mobile, and Web Technologies.">
+    <meta name="keywords" content="Sadegh Hajizadeh, Software Developer, Web Developer, Mobile Developer, Python, Dart, Kotlin, Flutter, HTML, CSS, PHP">
+    <meta name="author" content="Sadegh Hajizadeh">
+    <meta property="og:title" content="Sadegh Hajizadeh - Software Developer">
+    <meta property="og:description" content="Check out my projects, skills, and experience in software and mobile development.">
+    <meta property="og:image" content="https://github.com/sadegh-hz18/sadegh-hz18/raw/main/photo_2025-11-29_12-18-09.jpg">
+    <meta property="og:type" content="website">
+    
+    <title>Sadegh Hajizadeh - Software Developer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0d1117;
+            --text: #e6edf3;
+            --text-secondary: #a3b3c2; 
+            --accent: #00d4ff;
+            --accent-dark: #00a8cc;
+            --card: #161b22;
+            --border: #30363d;
+            --grid-line-color: rgba(0, 212, 255, 0.08); 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.6;
+            perspective: 1000px; 
+            overflow-y: auto; 
+        }
+
+        /* --- FINAL WORKING GRID (CSS BACKGROUND) --- */
+        .background-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            
+            /* CSS Gradient Grid Method - Robust and simple */
+            background: 
+                linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px) 0 0,
+                linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px) 0 0;
+            background-size: 50px 50px; 
+
+            pointer-events: none;
+            z-index: -2; 
+            opacity: 0.9s; 
+            transform-style: preserve-3d;
+            overflow: hidden; 
+        }
+        /* --- END GRID FIX --- */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 80px;
+            min-height: 100vh;
+            position: relative; 
+            z-index: 1;
+        }
+        .name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(3rem, 9vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #00d4ff, #a8e6cf);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: skewX(-10deg); 
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            transition: all 0.3s ease; 
+        }
+        /* ** افکت خفن نئون روی عنوان SOFTWARE DEVELOPER ** */
+        .title:hover {
+            color: #fff; 
+            text-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent);
+            transform: skewX(-8deg) scale(1.01);
+            cursor: default; 
+        }
+        /* **************************************** */
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+            margin-bottom: 30px;
+            transition: all 0.4s;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.7);
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+        .contact-item:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contact-item::before {
+            content: '>';
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            color: var(--text);
+            margin-bottom: 20px;
+            /* ** اصلاح برای خط متحرک ** */
+            border-bottom: none; 
+            padding-bottom: 12px; /* Increased padding for the line */
+            /* *********************** */
+            display: inline-block;
+            letter-spacing: 1px;
+            position: relative; /* Needed for pseudo-element */
+        }
+        
+        /* ** خط انرژی متحرک زیر عنوان بخش‌ها ** */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-dark) 50%, transparent);
+            background-size: 200% 100%;
+            animation: slideLine 3s linear infinite; 
+        }
+        @keyframes slideLine {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        /* ************************************** */
+        
+        .personal-statement {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 20px;
+            
+            /* ** اضافه شدن ترانزیشن برای افکت 3D هاور ** */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+        }
+        
+        .persian-typing-container {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Vazirmatn', sans-serif;
+            display: block;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            color: #e6edf3;
+            
+            overflow: hidden; 
+            white-space: nowrap; 
+            border-right: .15em solid var(--accent);
+            width: 0;
+            /* سرعت تایپ اصلاح شده */
+            animation: 
+                typing 6s steps(63, end) 1s forwards, 
+                blink-caret .75s step-end infinite 7s; 
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent); }
+        }
+
+        .experience-item, .project-item {
+            background: var(--card);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            
+            /* ** اضافه شدن ترانزیشن برای افکت 3D هاور ** */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        /* ** افکت هاور 3D برای همه باکس‌های محتوا ** */
+        .experience-item:hover, 
+        .project-item:hover,
+        .personal-statement:hover {
+            transform: translateY(-6px) rotateX(1deg) rotateY(-1deg) scale(1.01); 
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.35); 
+            border-color: var(--accent);
+        }
+        /* **************************************** */
+        
+        .item-title {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .item-company {
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            margin: 4px 0;
+        }
+        .item-link {
+            color: #a8e6cf;
+            font-size: 0.9rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+            gap: 12px;
+        }
+        .skill {
+            background: var(--card);
+            color: var(--accent);
+            padding: 10px 16px;
+            border-radius: 50px;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .skill:hover {
+            background: var(--accent);
+            color: #0d1117;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+        }
+        .icon {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
+            50% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.8); }
+            100% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 40px 15px;
+            }
+            .profile-img { width: 180px; height: 180px; }
+            .name { font-size: 3.5rem; }
+            .title { transform: skewX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="icon">✦</div>
+    
+    <div class="background-grid"></div>
+
+    <div class="container">
+        <div class="left-section">
+            <h1 class="name">SADEGH<br>HAJIZADEH</h1>
+            <h2 class="title">SOFTWARE<br>DEVELOPER</h2>
+            
+            <img src="https://github.com/sadegh-hz18/sadegh-hz18/raw/main/photo_2025-11-29_12-18-09.jpg" alt="Sadegh Hajizadeh" class="profile-img">
+            
+            <div class="contact-info">
+                <div class="contact-item">Email: <a href="mailto:sadeghhajizadeh999@gmail.com">sadeghhajizadeh999@gmail.com</a></div>
+                <div class="contact-item">Telegram: <a href="https://t.me/Namdarex" target="_blank">@Namdarex</a></div>
+                <div class="contact-item">GitHub: <a href="https://github.com/sadegh-hz18" target="_blank">github.com/sadegh-hz18</a></div>
+                <div class="contact-item">Location: Iran</div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">About</h3>
+                
+                <div class="personal-statement">
+                    Software & web Developer | Solving problems | Always learning 🚀
+                    
+                    <div class="persian-typing-container">
+                        عاشق حل مسائل پیچیده با کد تمیز و ابزارهای مدرن. همیشه در حال یادگیری زبان‌ها و تکنولوژی‌های جدید...
+                    </div>
+                </div>
+                
+                <div class="personal-statement" style="margin-top: 20px;">
+                    <div style="
+                        font-size: 1.4rem; 
+                        font-family: 'Orbitron', sans-serif; 
+                        font-weight: 700; 
+                        color: var(--accent); 
+                        margin-bottom: 20px;
+                        text-shadow: 0 0 10px rgba(0, 212, 255, 0.7); /* افکت نئون */
+                        border-bottom: 1px solid rgba(0, 212, 255, 0.4);
+                        padding-bottom: 10px;
+                    ">
+                        🔥 **Motto:** "I don't follow the future — I build my part of it."
+                    </div>
+                    
+                    <div style="margin-top: 10px;">
+                        👋 Hi, I'm Sadegh Hajizadeh, Creative Android Developer & Web Programmer who turns ideas into interactive digital experiences. I love combining logic, design, and clean code to build applications that not only work — they feel right.
+                        <br><br>
+                        I'm deeply passionate about software development — from crafting Android apps to designing dynamic and responsive websites. Beyond coding, I’m also fascinated by graphic design and enjoy bringing aesthetic ideas to life.
+                        <br><br>
+                        My mission is simple: Become the best in my field and help anyone who wants to grow in the digital world. I strive to build solutions that matter — products that can scale, inspire, and create real value. Every line of code I write is a step toward a future where technology empowers more people.
+                    </div>
+                </div>
+                </div>
+        </div>
+        
+        <div class="right-section">
+            <div class="section">
+                <h3 class="section-title">Experience</h3>
+                <div class="experience-item">
+                    <div class="item-title">Freelance Developer</div>
+                    <div class="item-company">Various Clients • 2023 – Present</div>
+                </div>
+                <div class="experience-item">
+                    <div class="item-title">Open-Source Contributor</div>
+                    <div class="item-company">GitHub • 2022 – Present</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Projects</h3>
+                <div class="project-item">
+                    <div class="item-title">Cirqle</div>
+                    <div class="item-company">Social space combining playful **games**, meaningful **connections**, and an **earned reward** system to build a strong community. <a href="https://github.com/dreamProgrammerh/Cirqle" class="item-link" target="_blank">[GitHub]</a></div>
+                </div>
+                <div class="project-item">
+                    <div class="item-title">Web Scraping Tools</div>
+                    <div class="item-company">Advanced data extraction with Python + BeautifulSoup/Selenium <a href="#" class="item-link">[GitHub]</a></div>
+                </div>
+                <div class="project-item">
+                    <div class="item-title">Full-Stack Dashboard</div>
+                    <div class="item-company">Admin panel with React + Node.js + PostgreSQL <a href="#" class="item-link">[Live Demo]</a></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Skills & Languages</h3>
+                <div class="personal-statement">
+                    <strong>Technical Skills:</strong> Python, JavaScript, Dart, Kotlin, Flutter, HTML, CSS, PHP, and more.
+                </div>
+                <div class="skills-grid">
+                    <div class="skill">Python</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Dart</div>
+                    <div class="skill">Kotlin</div>
+                    <div class="skill">Flutter</div>
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">PHP</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Scroll-triggered animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.section').forEach(el => observer.observe(el));
+
+        // Icon click - Random Color Effect
+        document.querySelector('.icon').addEventListener('click', () => {
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.documentElement.style.setProperty('--accent', randomColor);
+            document.documentElement.style.setProperty('--accent-dark', randomColor);
+            
+            alert('Theme Color Changed! 🎨');
+        });
+
+        // Mouse parallax effect for background grid (keeps the dynamic feel)
+        const grid = document.querySelector('.background-grid');
+        const sensitivity = 0.02; 
+
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.clientX) * sensitivity;
+            const yAxis = (window.innerHeight / 2 - e.clientY) * sensitivity;
+            // تنظیم transform-style: preserve-3d برای افکت عمق در پس‌زمینه
+            grid.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateZ(-100px)`; 
+        });
+    </script>
+</body>
+</html>
