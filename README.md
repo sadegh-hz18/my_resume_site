@@ -19,8 +19,8 @@ The site is currently hosted and live via GitHub Pages.
 | Icon | Feature | Description |
 | :---: | :--- | :--- |
 | **🔎** | **Dynamic Project Filter** | Users can click on any skill tag (e.g., Python, Flutter) to instantly filter the project list using pure JavaScript logic. |
-| **🌌** | **Cyberpunk UI & Parallax** | Deep dark mode theme, Orbitron typography, neon accents, and a subtle parallax background grid for maximum visual impact. |
-| **✨** | **Interactive 3D Hover** | All main content cards and sections react to mouse movement with a smooth 3D tilt and shadow elevation. |
+| **🌌** | **Cyberpunk UI & Parallax** | Deep dark mode theme, Orbitron typography, neon accents, and a subtle parallax grid background. |
+| **✨** | **Interactive 3D Hover** | All main content cards and sections react to mouse movement with a smooth 3D tilt and elevation (`transform: translateY`). |
 | **✍️** | **Animated Details** | Includes a Persian typing text effect and continuous, flowing energy lines under section titles. |
 | **📱** | **Optimized & Responsive** | Fully optimized for seamless viewing across all mobile devices and desktop screens. |
 
@@ -28,7 +28,7 @@ The site is currently hosted and live via GitHub Pages.
 
 ## 🛠️ Project Tech Breakdown
 
-این پورتفولیو یک پروژه **Static Front-end** است که برای نمایش تسلط بر هسته وب ساخته شده است.
+**The languages used in this project and the amount of their use.**
 
 ### Language Usage
 [![HTML](https://img.shields.io/badge/HTML-45%25-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://www.w3.org/html/)
