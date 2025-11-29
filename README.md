@@ -1,57 +1,58 @@
-# 🚀 SADEGH HAJIZADEH - EPIC Software Developer Portfolio
+# ⚡ SADEGH HAJIZADEH - THE ULTIMATE SOFTWARE PORTFOLIO 🚀
 
-## 💻 About The Project
+> ### 🔥 "I don't follow the future — I build my part of it."
+> A Developer Portfolio blending advanced web functionality with a futuristic Cyberpunk aesthetic.
 
-This repository hosts the personal portfolio of Sadegh Hajizadeh, a Software Developer focused on creating dynamic, clean, and interactive digital experiences.
+---
 
-This portfolio is designed to be future-forward, utilizing a Cyberpunk aesthetic to showcase technical projects and key skills.
+## 🌐 Live Deployment
+
+The site is currently hosted and live via GitHub Pages.
 
 🔗 **Visit the Live Site:**
-> [https://sadegh-hz18.github.io/my_resume_site/](https://sadegh-hz18.github.io/my_resume_site/)
+[https://sadegh-hz18.github.io/my_resume_site/](https://sadegh-hz18.github.io/my_resume_site/)
 
 ---
 
-## ✨ Key Features
+## 💡 Key Features & Interaction
 
-* **Dynamic Project Filtering:** Users can click on any skill (e.g., Python, Flutter) to instantly filter and display only the relevant projects using JavaScript and Data Attributes.
-* **Cyberpunk UI / Neon Glow:** A cohesive dark-mode theme featuring the Orbitron font, neon blue accents, and a subtle parallax grid background.
-* **Interactive 3D Hover Effects:** All content cards (projects, experience, and personal statements) react to mouse hover with a smooth 3D tilt and elevation (`transform: translateY`).
-* **Animated Details:** Includes a Persian typing text effect and continuous, flowing energy lines under section titles for a highly polished, futuristic feel.
-* **Responsive Design:** Optimized for seamless viewing on both mobile devices and desktops.
+| Icon | Feature | Description |
+| :---: | :--- | :--- |
+| **🔎** | **Dynamic Project Filter** | Users can click on any skill tag (e.g., Python, Flutter) to instantly filter the project list using pure JavaScript logic. |
+| **🌌** | **Cyberpunk UI & Parallax** | Deep dark mode theme, Orbitron typography, neon accents, and a subtle parallax background grid for maximum visual impact. |
+| **✨** | **Interactive 3D Hover** | All main content cards and sections react to mouse movement with a smooth 3D tilt and shadow elevation. |
+| **✍️** | **Animated Details** | Includes a Persian typing text effect and continuous, flowing energy lines under section titles. |
+| **📱** | **Optimized & Responsive** | Fully optimized for seamless viewing across all mobile devices and desktop screens. |
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Tools
 
-* **HTML5:** Structure and Data Attributes for dynamic functionality.
-* **CSS3:** Styling, custom variables, keyframes for animations, and advanced transitions.
-* **JavaScript (Vanilla JS):** Handling user interactions, dynamic filtering logic, scroll-based animations, and custom color themes.
+The portfolio is built purely with front-end technologies to demonstrate core development proficiency.
+
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://www.w3.org/html/)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3schools.com/css/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ---
 
 ## ⚙️ Getting Started
 
-To get a local copy up and running, follow these simple steps. This is a static site, requiring only a web browser.
+To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the Repository:**
     ```bash
     git clone [https://github.com/sadegh-hz18/my_resume_site.git](https://github.com/sadegh-hz18/my_resume_site.git)
     ```
-2.  **Navigate to the folder:**
-    ```bash
-    cd my_resume_site
-    ```
-3.  **Open the file:**
-    Simply open the `index.html` file in your favorite web browser (e.g., Chrome, Firefox).
+2.  **Run Locally:**
+    Open the `index.html` file in your favorite web browser.
 
 ---
 
-## 📞 Contact
+## 🤝 Contact Information
 
-**Sadegh Hajizadeh**
-
-* **GitHub:** [https://github.com/sadegh-hz18](https://github.com/sadegh-hz18)
-* **Email:** [sadeghhajizadeh999@gmail.com](mailto:sadeghhajizadeh999@gmail.com)
-* **Telegram:** [@Namdarex](https://t.me/Namdarex)
-
-Project Link: [https://sadegh-hz18.github.io/my_resume_site/](https://sadegh-hz18.github.io/my_resume_site/)
+| Channel | Link |
+| :---: | :--- |
+| 🧑‍💻 **GitHub** | [https://github.com/sadegh-hz18](https://github.com/sadegh-hz18) |
+| 📧 **Email** | [sadeghhajizadeh999@gmail.com](mailto:sadeghhajizadeh999@gmail.com) |
+| 📞 **Telegram** | [@Namdarex](https://t.me/Namdarex) |
